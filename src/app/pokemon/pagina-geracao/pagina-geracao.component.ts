@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Geration } from '../shared/model/geration';
+import { PokemonService } from '../shared/service/pokemon.service';
 
 @Component({
   selector: 'app-pagina-geracao',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaGeracaoComponent implements OnInit {
 
-  constructor() { }
+  public geracoes: Geration[] = [];
+
+  constructor(private pokemonService: PokemonService) { }
 
   ngOnInit() {
+    this.obterTodasAsGeracoes();
   }
 
+  public obterTodasAsGeracoes(): void {
+    this.pokemonService.obterTodasAsGeracoes().subscribe((res) => {
+      console.log(res);
+      this.geracoes = res;
+    }, (err) => {
+      console.log(err.status);
+    })
+  }
+
+  public alerta(url: string): void {
+    alert(url);
+  }
 }

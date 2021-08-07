@@ -19,6 +19,7 @@ import { PokemonModule } from './pokemon/pokemon.module';
     imports: [
         BrowserModule,
         AppRoutingModule,
+        HttpClientModule,
         PokemonModule
     ],
     providers: [],

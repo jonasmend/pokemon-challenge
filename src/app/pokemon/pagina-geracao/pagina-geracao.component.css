@@ -1,0 +1,103 @@
+.navbar {
+  background-color: red;
+  justify-content: center;
+  padding-bottom: 0;
+}
+
+h1 {
+  font-family: 'Pokemon Solid', sans-serif;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 515px){
+  .navbar-body img {
+    width: 400px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 415px){
+  .navbar-body img {
+    width: 350px;
+    height: 150px;
+  }
+  .semicircle {
+    width: 170px !important;
+    height: 85px !important;
+  }
+}
+
+@media screen and (max-width: 365px){
+  .navbar-body img {
+    width: 280px;
+    height: 100px;
+  }
+}
+
+.btn-outline-danger {
+  color: black;
+  border: 1px solid black;
+}
+.btn-outline-danger:hover {
+  border: 1px solid red;
+  color: white;
+  background-color: red;
+}
+
+.semicircle {
+  display: flex;
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  border-top-left-radius: 110px;
+  border-top-right-radius: 110px;
+  border: 10px solid black;
+  border-bottom: 0 !important;
+}
+
+
+.container-fluid {
+  justify-content: center;
+}
+
+.container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  /*> h1 {
+    font-family: 'Russo One', sans-serif;
+    margin: 0;
+  }*/
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  background: white;
+  /*border: 1px solid black;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
+  cursor: pointer;
+  margin: 10px;
+  padding: 0 !important;
+  text-transform: uppercase;
+}
+
+.card-header {
+  background-color: red;
+  font-family: 'Pokemon Solid', sans-serif;
+  color: white;
+}
+
+.card-footer {
+  /*border-top: 1px solid black;*/
+  background-color: white;
+}
