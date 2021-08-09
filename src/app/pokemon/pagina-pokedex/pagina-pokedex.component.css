@@ -1,0 +1,42 @@
+.navbar{
+  background-color: red;
+}
+
+.card-row {
+  justify-content: center;
+  margin-top: 10px;
+}
+
+p-header {
+  text-transform: uppercase;
+}
+
+.ui-dialog-titlebar {
+  background-color: red !important;
+}
+
+.dropdown-row {
+  padding: 0 15px;
+}
+
+.card-pokemon {
+  width: 90px;
+  height: 140px;
+  background-color: #FFF;
+  margin: 0 10px 10px 10px;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  display: table;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: rgb(229, 229, 229);
+}
+
+.dialog-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}

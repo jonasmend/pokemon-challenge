@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Geration } from '../shared/model/geration';
+import { Geration } from '../shared/model/generation.model';
 import { PokemonService } from '../shared/service/pokemon.service';
 
 @Component({
@@ -24,9 +24,5 @@ export class PaginaGeracaoComponent implements OnInit {
     }, (err) => {
       console.log(err.status);
     })
-  }
-
-  public alerta(url: string): void {
-    alert(url);
   }
 }

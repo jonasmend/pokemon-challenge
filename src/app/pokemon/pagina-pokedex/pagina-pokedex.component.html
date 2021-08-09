@@ -1,1 +1,65 @@
-<p>pagina-pokedex works!</p>
+<nav class="navbar">
+  <div class="">
+    <a class="navbar-brand" href="#">
+      <i class="fas fa-arrow-left" style="color: white;"></i>
+    </a>
+  </div>
+</nav>
+
+<div class="container-fluid" style="margin-top: 10px;">
+  <div class="row dropdown-row">
+    <div class="dropdown-jogos" style="padding: 10px;">
+      <h5>Jogo: </h5>
+      <p-dropdown *ngIf="this.versoes" [(ngModel)]='versaoSelecionada' placeholder="Selecione o jogo" [options]='this.versoes.version_groups' optionLabel="name" (onChange)='obterRegioesPelaVersao()'>
+      </p-dropdown>
+    </div>
+    <div *ngIf="this.gameVersao" class="dropdown-regioes" style="padding: 10px;">
+      <h5>Regiões: </h5>
+      <p-dropdown [(ngModel)]='regiaoSelecionada' [disabled]='!this.versaoSelecionada' placeholder="Selecione uma região" [options]='this.gameVersao.pokedexes' optionLabel="name" (onChange)='obterPokedexPelaRegiao()'>
+      </p-dropdown>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" *ngIf="pokedex" >
+  <div class="row card-row">
+    <span *ngIf="pokedex.lenght == 0" >Náo h[a pokemons para serem exibidos!</span>
+    <div class="card card-pokemon text-center col-xl-1 col-lg-2 col-md-2 col-sm-2 col-5" (click)='mostrarDialogPokemon(pokemon)' *ngFor="let pokemon of pokedex" >
+      
+      <img class="pkm-image" [src]="pokemon.image">
+      <div class=""><span style="width: 0%;">#{{pokemon.pokeindex}}</span></div>
+      <span class="">{{pokemon.pokemon_species.name}}</span>
+      
+    </div>
+  </div>
+</div>
+
+<div *ngIf="mostrarDialog"  >
+  <p-dialog [(visible)]="this.mostrarDialog" draggable="false" blockScroll="true" closable="true" responsive="true">
+    <p-header>
+        #{{this.pokemon.id}} {{this.pokemon.name}}
+    </p-header>
+      <div class="dialog-body">
+        <div class="tipo">
+          <span>Tipo(s): </span>
+          <div *ngFor="let tipo of pokemon.types">
+            <span>{{tipo.type.name}}</span>
+          </div>
+        </div>
+
+        <div class="habilidades" style="margin-left: 10px;">
+          <span>Habilidade(s): </span>
+          <div *ngFor="let habilidade of pokemon.abilities">
+            <span>{{habilidade.ability.name}} </span>
+          </div>
+        </div>
+        
+      </div>
+      <div class="imagem-pokemon text-center">
+        <img [src]="pokemon.sprites.front_default">
+      </div>
+    <p-footer>
+        <button class="btn btn-danger" (click)='fecharDialog()' style="background-color: red;"><i class="fas fa-times"></i> Fechar</button>
+    </p-footer>
+  </p-dialog>
+</div>

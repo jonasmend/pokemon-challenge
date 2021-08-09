@@ -25,7 +25,7 @@
         <p class="card-text">Pokédex</p>
       </div>
       <div class="card-footer text-muted">
-        <button (click)='this.alerta(geracao.url)' class="btn btn-outline-danger">Acessar</button>
+        <button [routerLink]="[geracao.name]" class="btn btn-outline-danger">Acessar</button>
       </div>
     </div>
   </div>
