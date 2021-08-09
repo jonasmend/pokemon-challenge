@@ -6,7 +6,7 @@ Consulta de Pokedexes Pokemon através das gerações utilizando a API pokeapi `
 
 ### Técnologias empregadas
 <ul>
-  <li>AngularJS</li>
+  <li>Angular</li>
   <li>Typescript</li>
   <li>Bootstrap</li>
   <li>PrimeNG</li>
